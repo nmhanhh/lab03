@@ -14,22 +14,22 @@
         <fieldset>
             <legend>Student details</legend>
                 <p><label for="stuid">Student ID</label>
-                    <input type="text" name="stuid" id="stuid" required="required"/>
+                    <input type="text" name="stuid" id="stuid" required>
                 </p>
                 <p><label for="given">Given Name</label>
-                <input type="text" name="given" id="given" required="required"/>
+                <input type="text" name="given" id="given" required>
                 <label for="family">Family Name</label>
-                <input type="text" name="family" id="family" required="required"/>
+                <input type="text" name="family" id="family" required>
                 </p>
         </fieldset>
         <fieldset>
             <legend>Your Unit</legend>
             <p>
-                <input type="radio" id="cos10011" name="cos10011" value="COS10011"/>
+                <input type="radio" id="cos10011" name="cos10011" value="COS10011">
                 <label for="cos10011">COS10011</label>
-                <input type="radio" id="cos60004" name="cos60004" value="COS60004"/>
+                <input type="radio" id="cos60004" name="cos60004" value="COS60004">
                 <label for="cos60004">COS60004</label>
-                <input type="radio" id="cos60007" name="cos60007" value="COS60007"/>
+                <input type="radio" id="cos60007" name="cos60007" value="COS60007">
                 <label for="cos60007">COS60007</label>
             </p>
             <p><label for="tutor">Your tutor</label>
@@ -47,15 +47,15 @@
                 <legend>Issue</legend>
                 <p>
                     <label for="html">HTML</label>
-                    <input type="checkbox" id="html" name="category[]" value="html" checked="checked"/>
+                    <input type="checkbox" id="html" name="category[]" value="html" checked>
                     <label for="css">CSS</label>
-                    <input type="checkbox" id="css" name="category[]" value="css"/>
+                    <input type="checkbox" id="css" name="category[]" value="css">
                     <label for="js">JavaScript</label>
-                    <input type="checkbox" id="js" name="category[]" value="js"/>
+                    <input type="checkbox" id="js" name="category[]" value="js">
                     <label for="php">PHP</label>
-                    <input type="checkbox" id="php" name="category[]" value="php"/>
+                    <input type="checkbox" id="php" name="category[]" value="php">
                     <label for="mysql">MySQL</label>
-                    <input type="checkbox" id="mysql" name="category[]" value="mysql"/>
+                    <input type="checkbox" id="mysql" name="category[]" value="mysql">
                 </p>
                 <p><label for="desc">Description of Issue</label></p>
                 <textarea id="desc" name="desc" rows="4" cols="40"></textarea>
@@ -63,14 +63,23 @@
             <fieldset>
                 <legend>Preferred Time/Date</legend>
                 <p><label for="date">Date</label>
-                    <input type="date" name= "date" id="date" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
+                    <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" pattern="(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/\\d{4}">
+                    <!--0?[1-9]|[12][0-9]|3[01] matches day 1-31 -->
+                    <!--0?[1-9]|1[012] matches month 1-12 -->
+                    <!--\d matches 4 digits for year-->
                 </p>
                 <p><label for="time">Time</label>
-                    <input type="time" name= "time" id="time" placeholder="00:00" maxlength="4" size="10"/>
+                    <input type="text" name="time" id="time" placeholder="00:00" pattern="(?:[01]|2(?![4-9]))\d:[0-5]\d">
+                    <!-- [01] matches hours 00-19 -->
+                    <!-- | or operator-->
+                    <!-- 2(?![4-9]) matches hours 20-23, ?![4-9] doesn't allow 2 followed by a digit 4-9-->
+                    <!--\d matches 0-9 for 2nd hour digit-->
+                    <!-- (0-5) matches 1st digit of a minute -->
+                    <!--\d matches 0-9 for 2nd second digit-->
                 </p>
             </fieldset>
-        <input type= "submit" value="Register"/>
-        <input type= "reset" value="Reset Form"/>
+        <button type="submit">Register</button>
+        <button type="reset">Reset Form</button>
     </form>
 </body>
 </html>
