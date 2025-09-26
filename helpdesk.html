@@ -14,18 +14,18 @@
         <fieldset>
             <legend>Student details</legend>
                 <p><label for="stuid">Student ID</label>
-                    <input type="text" name="stuid" id="stuid" pattern="\d{9}" required>
+                    <input type="text" name="stuid" id="stuid" pattern="\d{7-9}" required>
                 </p>
                 <p><label for="given">Given Name</label>
-                <input type="text" name="given" id="given" required>
+                <input type="text" name="given" id="given" maxlength="15" pattern="[A-Za-z]" required>
                 <label for="family">Family Name</label>
-                <input type="text" name="family" id="family" required>
+                <input type="text" name="family" id="family" maxlength="15" pattern="[A-Za-z]" required>
                 </p>
         </fieldset>
         <fieldset>
             <legend>Your Unit</legend>
             <p>
-                <input type="radio" id="cos10011" name="cos10011" value="COS10011">
+                <input type="radio" id="cos10011" name="cos10011" value="COS10011" required>
                 <label for="cos10011">COS10011</label>
                 <input type="radio" id="cos60004" name="cos60004" value="COS60004">
                 <label for="cos60004">COS60004</label>
@@ -33,13 +33,13 @@
                 <label for="cos60007">COS60007</label>
             </p>
             <p><label for="tutor">Your tutor</label>
-                <select name="tutor" id="tutor">
-                    <option value="british">Please select</option>
-                    <option value="burmese">John Doe</option>
-                    <option value="manx">Walter</option>
-                    <option value="ragdoll">White</option>
-                    <option value="russian">Jesse</option>
-                    <option value="siamese">Pinkman</option>
+                <select name="tutor" id="tutor" required>
+                    <option value="">Please select</option>
+                    <option value="johndoe">John Doe</option>
+                    <option value="walter">Walter</option>
+                    <option value="white">White</option>
+                    <option value="jesse">Jesse</option>
+                    <option value="pinkman">Pinkman</option>
                 </select>
             </p>
         </fieldset>
